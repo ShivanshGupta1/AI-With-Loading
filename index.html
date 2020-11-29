@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="myfunction()">
+    <div id="mario-chat">
+        <div id="chat-window">
+            <div id="output">
+                
+            </div>
+        </div>
+        <input type="text" id="handle" placeholder="Your Name">
+            <input type="text" id="message" placeholder="Message" >
+            <h5 id="1" style="display: none;">Zach is Typing</h5>
+             <div id="2" style="display: none;" class='loader'> </div>
+                <button id="send" type="submit" onclick="">Send</button>
+                
+                
+                
+        </div>
+
+
+   
+<script>
+
+    let n = document.getElementById('handle')
+    let message = document.getElementById('message')
+    let output = document.getElementById('output')
+    let button = document.getElementById('send')
+    let ans;
+    let h1 = document.getElementById("1")
+    let div = document.getElementById("2")
+    button.addEventListener('click', ()=>{  
+        h1.style.display = "block"
+    div.style.display = "block"
+  setTimeout(function(){
+    message = message.value;
+    new_message = message.split(",")
+    let firstnum = parseInt(new_message[0])
+    let secondnum = parseInt(new_message[1])
+    if(new_message[2]=="+"){
+        
+let ans = firstnum+secondnum;
+    
+  output.innerHTML += ""+'<p> <strong>'+"Zach"+': </strong> '+ans+'</p>'
+  h1.style.display = "none"
+    div.style.display = "none"
+}
+else if(new_message[2]=="-"){
+        
+let ans = firstnum-secondnum;
+    
+  output.innerHTML += ""+'<p> <strong>'+"Zach"+': </strong> '+ans+'</p>'
+  h1.style.display = "none"
+    div.style.display = "none"
+}
+else if(new_message[2]=="*"){
+        console.log("Yo!")
+let ans = firstnum*secondnum;
+    
+  output.innerHTML += ""+'<p> <strong>'+"Zach"+': </strong> '+ans+'</p>'
+  h1.style.display = "none"
+    div.style.display = "none"
+}
+else if(new_message[2]=="/"){
+        console.log("Yo!")
+let ans = firstnum/secondnum;
+    
+  output.innerHTML += ""+'<p> <strong>'+"Zach"+': </strong> '+ans+'</p>'
+  h1.style.display = "none"
+    div.style.display = "none"
+}
+  },5000)
+ 
+  output.innerHTML += '<p> <strong>'+n.value+': </strong> '+message.value+'</p>'
+
+ 
+       
+    })
+    function myfunction(){
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Hi there! I am Zach the AI Chatbot"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"I am also a professional mathematician calculator!"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Give me an arithmetic problem to solve, and I will give it to you in a jiffy "+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"The format will be - firstNumber,secondNumber,operator. An example can be 1,2,+"+'</p>'
+
+        
+    }
+        
+       
+    
+</script>
+</body>
+<style>
+ 
+</style>
+</html>
+
+
